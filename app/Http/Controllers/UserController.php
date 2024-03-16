@@ -12,28 +12,42 @@ class UserController extends Controller
 
 /**
  * 
+ * 
+ * /**
+ * @OA\Info(
+ *     title="Your API Title",
+ *     version="1.0.0",
+ *     description="Login API",
+ *     @OA\Contact(
+ *         email="saurabh"
+ *     ),
+ *     @OA\License(
+ *         name="MIT"
+ *     )
+ * )
+
 
 * @OA\Post(
      *     path="/api/register",
      *     summary="Register a new user",
      *     @OA\Parameter(
-     *         name="name",
+     *         name="saurabh jadhav",
      *         in="query",
-     *         description="User's name",
+     *         description="Saurabh",
      *         required=true,
      *         @OA\Schema(type="string")
      *     ),
      *     @OA\Parameter(
      *         name="email",
      *         in="query",
-     *         description="User's email",
+     *         description="saurabhjadhav150@gmail.com",
      *         required=true,
      *         @OA\Schema(type="string")
      *     ),
      *     @OA\Parameter(
      *         name="password",
      *         in="query",
-     *         description="User's password",
+     *         description="123456",
      *         required=true,
      *         @OA\Schema(type="string")
      *     ),
@@ -114,17 +128,4 @@ class UserController extends Controller
 
     }
 
-    /**
-     * @OA\Get(
-     *     path="/api/user",
-     *     summary="Get logged-in user details",
-     *     @OA\Response(response="200", description="Success"),
-     *     security={{"bearerAuth":{}}}
-     * )
-     */
-    public function getUserDetails(Request $request)
-    {
-        $user = $request->user();
-        return response()->json(['user' => $user], 200);
-    }
 }
